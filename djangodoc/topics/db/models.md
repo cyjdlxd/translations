@@ -6,7 +6,7 @@
 > * 模型的每个属性都代表一个数据库字段 
 > * 基于以上这些，Django提供了一个自动生成的数据库访问API。详见[数据查询](queries.md)
 
-## 简单示例
+## <span id="simple-example">简单示例</span>
 
 > 以下示例定义了一个包含first_name和last_name属性都Person模型 
 
@@ -31,8 +31,20 @@ CREATE TABLE myapp_person (
 ```
 
 > 一些技术要点： 
-> * 表名myapp_person（译者注：myapp指代你的Django app名称）是自动从模型元数据派生出来的，可以修改。查阅[表名设置](https://docs.djangoproject.com/zh-hans/2.0/ref/models/options/#table-names)获取详细内容。
-> *
-> *
-> *
-> *
+> * 表名 **myapp_person** （译者注：myapp指代你的Django app名称）是自动从模型元数据派生出来的，可以修改。查阅[表名设置](https://docs.djangoproject.com/zh-hans/2.0/ref/models/options/#table-names)获取详细内容。
+> * id字段将自动添加，也可以自定义。详见[自动添加主键字段]()
+> * 这个例子中的建表SQL用的是PostgreSQL语法格式，Django会根据[配置文件]()中指定的数据库来定制SQL语句。
+
+---
+
+## 使用模型
+
+>  一旦你定义了模型，你需要告诉Django你想要使用这些模型。可以编辑配置文件，在 **[INSTALLED_APPS](https://docs.djangoproject.com/zh-hans/2.0/ref/settings/#std:setting-INSTALLED_APPS)**
+
+
+
+
+
+
+
+
