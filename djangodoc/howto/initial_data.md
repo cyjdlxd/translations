@@ -12,7 +12,7 @@
 
 > 你也可以通过夹具(fixtures)提供初始化数据，但是，夹具的初始化数据不能自动加载，除非使用 **[TransactionTestCase.fixtures](https://docs.djangoproject.com/zh-hans/2.0/topics/testing/tools/#django.test.TransactionTestCase.fixtures)**  
 > 夹具(fixture)是一种Django可识别的数据集合，Django了解如何将其倒入数据库。 
-> 如果你已经准备了一些数据，最直截了当的创建夹具的方式就是执行命令**[manage.py dumpdata](https://docs.djangoproject.com/zh-hans/2.0/ref/django-admin/#django-admin-dumpdata)**。或者，你也可以手写夹具，夹具可以用JSON、XML或者YAML(需要安装[PyYAML](https://www.pyyaml.org/))格式来撰写。查阅[序列化文档](https://docs.djangoproject.com/zh-hans/2.0/topics/serialization/)可以获得关于受支持的[序列化格式](https://docs.djangoproject.com/zh-hans/2.0/topics/serialization/#serialization-formats)的更多详细信息。 
+> 如果你已经准备了一些数据，最直截了当的创建夹具的方式就是执行命令 **[manage.py dumpdata](https://docs.djangoproject.com/zh-hans/2.0/ref/django-admin/#django-admin-dumpdata)** 。或者，你也可以手写夹具，夹具可以用JSON、XML或者YAML(需要安装[PyYAML](https://www.pyyaml.org/))格式来撰写。查阅[序列化文档](https://docs.djangoproject.com/zh-hans/2.0/topics/serialization/)可以获得关于受支持的[序列化格式](https://docs.djangoproject.com/zh-hans/2.0/topics/serialization/#serialization-formats)的更多详细信息。 
 > 下例展示了一个Person模型的JSON格式的夹具：
 
 ```
@@ -51,7 +51,7 @@
     last_name: McCartney
 ```
 
-> 在你的应用目录创建**fixtures**目录，将夹具，存放在该目录。 
+> 在你的应用目录创建 **fixtures** 目录，将夹具，存放在该目录。 
 
 > 加载数据很简单：执行命令 **[manage.py loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata) <fixturename>** ，其中 **<fixturename>** 是你创建的夹具文件的名字。 
 > 一旦你执行**[loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata)**命令，数据将从夹具重新加载到数据库。请注意，这意味着如果你修改了夹具中的数据，然后执行[loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata)命令，这些变化将同步到数据库，并覆盖数据库中原有的数据。
