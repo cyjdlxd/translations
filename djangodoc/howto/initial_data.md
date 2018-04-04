@@ -53,7 +53,7 @@
 
 > 在你的应用目录创建**fixtures**目录，将夹具，存放在该目录。 
 
-> 加载数据很简单：执行命令**[manage.py loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata) <fixturename>**，其中**<fixturename>**是你创建的夹具文件的名字。 
+> 加载数据很简单：执行命令 **[manage.py loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata) <fixturename>** ，其中 **<fixturename>** 是你创建的夹具文件的名字。 
 > 一旦你执行**[loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata)**命令，数据将从夹具重新加载到数据库。请注意，这意味着如果你修改了夹具中的数据，然后执行[loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata)命令，这些变化将同步到数据库，并覆盖数据库中原有的数据。
 
 ## Django如何寻找夹具文件
