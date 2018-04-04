@@ -10,7 +10,7 @@
 
 ## 通过夹具(fixtures)进行初始化
 
-> 你也可以通过夹具(fixtures)提供初始化数据，但是，夹具的初始化数据不能自动加载，除非使用**[TransactionTestCase.fixtures](https://docs.djangoproject.com/zh-hans/2.0/topics/testing/tools/#django.test.TransactionTestCase.fixtures)**  
+> 你也可以通过夹具(fixtures)提供初始化数据，但是，夹具的初始化数据不能自动加载，除非使用 **[TransactionTestCase.fixtures](https://docs.djangoproject.com/zh-hans/2.0/topics/testing/tools/#django.test.TransactionTestCase.fixtures)**  
 > 夹具(fixture)是一种Django可识别的数据集合，Django了解如何将其倒入数据库。 
 > 如果你已经准备了一些数据，最直截了当的创建夹具的方式就是执行命令**[manage.py dumpdata](https://docs.djangoproject.com/zh-hans/2.0/ref/django-admin/#django-admin-dumpdata)**。或者，你也可以手写夹具，夹具可以用JSON、XML或者YAML(需要安装[PyYAML](https://www.pyyaml.org/))格式来撰写。查阅[序列化文档](https://docs.djangoproject.com/zh-hans/2.0/topics/serialization/)可以获得关于受支持的[序列化格式](https://docs.djangoproject.com/zh-hans/2.0/topics/serialization/#serialization-formats)的更多详细信息。 
 > 下例展示了一个Person模型的JSON格式的夹具：
