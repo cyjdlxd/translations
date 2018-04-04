@@ -58,15 +58,15 @@
 
 ## Django如何寻找夹具文件
 
-> 默认情况下，Django在每个应用目录下的**fixtures**目录查找夹具文件。你也可以通过修改配置文件中的**[FIXTURE_DIRS](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-FIXTURE_DIRS)**配置一个附加的目录列表来告诉Django该去哪里查找夹具文件。 
+> 默认情况下，Django在每个应用目录下的 **fixtures** 目录查找夹具文件。你也可以通过修改配置文件中的 **[FIXTURE_DIRS](https://docs.djangoproject.com/en/2.0/ref/settings/#std:setting-FIXTURE_DIRS)** 配置一个附加的目录列表来告诉Django该去哪里查找夹具文件。 
 
-> 在执行**[manage.py loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata)**命令时，你也可以指定一个夹具文件搜索目录，来替代之前配置的常用夹具文件目录。
+> 在执行 **[manage.py loaddata](https://docs.djangoproject.com/en/2.0/ref/django-admin/#django-admin-loaddata)** 命令时，你也可以指定一个夹具文件搜索目录，来替代之前配置的常用夹具文件目录。
 
 ---
 
->> ### 附注 
+> ### 附注 
 
->> 夹具也可以用于[测试框架](https://docs.djangoproject.com/en/2.0/topics/testing/tools/#topics-testing-fixtures)，用以建立一致的测试环境。
+> 夹具也可以用于[测试框架](https://docs.djangoproject.com/en/2.0/topics/testing/tools/#topics-testing-fixtures)，用以建立一致的测试环境。
 
 
 
