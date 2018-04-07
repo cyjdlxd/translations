@@ -6,7 +6,7 @@
 > * 模型的每个属性都代表一个数据库字段 
 > * 基于以上这些，Django提供了一个自动生成的数据库访问API。详见[数据查询](queries.md)
 
-## <span id="simple-example"简单示例</span
+## <span id="simple-example">简单示例</span>
 
 以下示例定义了一个包含first_name和last_name属性都Person模型 
 
