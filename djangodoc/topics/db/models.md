@@ -93,6 +93,105 @@ Django带有几十种内置字段类型，你可以在[模型字段指南](https
 
 除了特定参数，还有一组通用的字段参数，完整解释参见[通用字段参数指南](https://docs.djangoproject.com/en/2.0/ref/models/fields/#common-model-field-options)，这里有一个常用参数摘要：
 
+### [null](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.null)
+
+如果值是True，Django将把空值转为null存入数据库。默认是Fasle。
+
+### [blank](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.blank)
+
+如果值是True，当前字段的值将允许为空。默认是False。
+
+请注意blank与null的区别，null是纯粹数据库相关的，而blank是验证相关的。如果一个字段设置blank=True，表单验证将允许该字段输入空值。如果一个字段设置blank=False, 这个字段就是必填的。
+
+### [choices](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.choices)
+
+一个可迭代的二维元组（list或者tuple等）可以作为字段的choices参数，如果给出了这个参数，对应的默认表单组件（管理页面表单）将会是selec选择框，选项限定为给定的choices元组中的子元组元素。
+
+一个选择列表例子：
+
+```
+YEAR_IN_SCHOOL_CHOICES = (
+    ('FR', 'Freshman'),
+    ('SO', 'Sophomore'),
+    ('JR', 'Junior'),
+    ('SR', 'Senior'),
+    ('GR', 'Graduate'),
+)
+```
+
+每个子元组中的第一个元素将被存入数据库中，第二个元素用于字段在表单里对应的组件中展示。
+
+对于模型实例中设定 **choices** 参数的字段，可以通过 **[get_FOO_display](https://docs.djangoproject.com/en/2.0/ref/models/instances/#django.db.models.Model.get_FOO_display)** 方法获取所有的展示值，例如：
+
+```
+from django.db import models
+
+class Person(models.Model):
+    SHIRT_SIZES = (
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+    )
+    name = models.CharField(max_length=60)
+    shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
+```
+
+```
+>>> p = Person(name="Fred Flintstone", shirt_size="L")
+>>> p.save()
+>>> p.shirt_size
+'L'
+>>> p.get_shirt_size_display()
+'Large'
+```
+
+### [default](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.default)
+
+字段的默认值，可以是一个值或者回调对象。如果可回调，每次创建新对象时都会调用它。
+
+### [help_text](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.help_text)
+
+用于展示在表单组件的额外帮助信息，即使该字段未用于表单，作为文档帮助信息也是很有用的。
+
+### [primary_key](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.primary_key)
+
+如果值是True，该字段将作为模型的主键。
+
+如果你没有指定任何字段为主键，Django将自动添加一个[IntegerField](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.IntegerField)字段作为主键（译者按：自动添加的主键是非自增的。），因此，除非你想特别指定一个主键，否则完全可以不用手动指定主键。更多信息，参阅[自动主键字段](https://docs.djangoproject.com/en/2.0/topics/db/models/#automatic-primary-key-fields)。
+
+主键字段是只读的，如果你想修改一个已存在的模型实例的主键值并执行保存，只会新插入一条数据并创建一个新的模型实例，而不是修改你想修改的那个模型实例的主键。例如：
+
+```
+from django.db import models
+
+class Fruit(models.Model):
+    name = models.CharField(max_length=100, primary_key=True)
+```
+
+```
+>>> fruit = Fruit.objects.create(name='Apple')
+>>> fruit.name = 'Pear'
+>>> fruit.save()
+>>> Fruit.objects.values_list('name', flat=True)
+<QuerySet ['Apple', 'Pear']>
+```
+
+### [unique](https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field.unique)
+
+如果值为True，该字段将被设置唯一索引。
+
+以上只是常用字段参数的一个简短摘要，全面详细的内容参阅[常用模型字段参数参考指南](https://docs.djangoproject.com/en/2.0/ref/models/fields/#common-model-field-options)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
