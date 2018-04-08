@@ -79,9 +79,9 @@ class Album(models.Model):
 ## 字段类型
 
 每个字段都应该是一个适当字段类的实例。Django使用字段类来确定一些事情：
-> * 告知数据库应该以那种类型来存储数据（例如INTEGER, VARCHAR, TEXT等）
+> * 告知数据库应该以那种类型来存储数据（例如INTEGER, VARCHAR, TEXT等） 
 > * 渲染表单时，字段对应哪种HTML标签（例如<input type="text">, <select>等） 
-> * Django管理页面和自动生成的表单中需要的最小验证需求
+> * Django管理页面和自动生成的表单中需要的最小验证需求 
 
 Django带有几十种内置字段类型，你可以在[模型字段指南](https://docs.djangoproject.com/en/2.0/ref/models/fields/#model-field-types)中看到完整列表。你也可以很方便的编写自定义的字段类，详见[编写自定义模型字段类](https://docs.djangoproject.com/en/2.0/howto/custom-model-fields/)
 
